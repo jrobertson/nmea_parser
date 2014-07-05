@@ -22,7 +22,7 @@ class NMEAParser
   def parse(raw_line)
 
     msgcode = raw_line[/^\$GP(\w+)/]
-    return puts 'no data' unless msgcode
+    return unless msgcode
 
     a = raw_line.split(',')
 
