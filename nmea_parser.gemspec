@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'nmea_parser'
-  s.version = '0.1.3'
+  s.version = '0.1.4'
   s.summary = 'Parses NMEA strings to fetch and convert GPS coordinates.'
   s.authors = ['James Robertson']
   s.files = Dir['lib/**/*.rb']

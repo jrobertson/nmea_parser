@@ -9,16 +9,10 @@ class NMEAParser
 
   attr_reader  :longitude, :latitude, :time
 
-  def initialize(s)
-    parse(s)
+  def initialize(s=nil)
+    parse(s) if s
   end
   
-  def to_h()  
-    {time: @time, latitude: @latitude, longitude: @longitude}
-  end
-
-  private
-
   def parse(raw_line)
 
     msgcode = raw_line[/^\$GP(\w+)/]
@@ -34,6 +28,12 @@ class NMEAParser
     end
 
   end
+
+  def to_h()  
+    {time: @time, latitude: @latitude, longitude: @longitude}
+  end
+
+  private
 
   def decimalize(raw_x, raw_nesw)
 

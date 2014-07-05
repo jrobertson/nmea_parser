@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-file: nmea_parser.rb
+# file: nmea_parser.rb
 
 require 'time'
 
