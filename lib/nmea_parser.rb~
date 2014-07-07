@@ -3,6 +3,7 @@
 # file: nmea_parser.rb
 
 require 'time'
+require 'immutable_struct'
 
 class NMEAParser
 
@@ -31,6 +32,11 @@ class NMEAParser
 
   def to_h()  
     {time: @time, latitude: @latitude, longitude: @longitude}
+  end
+
+  def to_struct()
+    h = self.to_h
+    ImmutableStruct.new(*h.keys.map(&:to_sym)).new(*h.values)    
   end
 
   private
