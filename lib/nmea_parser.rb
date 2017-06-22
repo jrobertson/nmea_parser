@@ -15,6 +15,10 @@ class NMEAParser
     parse(s) if s
   end
   
+  alias lon longitude
+  alias long longitude
+  alias lat latitude
+  
   def parse(raw_line)
 
     msgcode = raw_line[/^\$GP(\w+)/]

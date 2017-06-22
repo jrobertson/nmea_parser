@@ -4,7 +4,7 @@
 
 require 'time'
 require 'date'
-require 'immutable_struct'
+
 
 class NMEAParser
 
@@ -81,7 +81,7 @@ class NMEAParser
 
   def to_struct()
     h = self.to_h
-    ImmutableStruct.new(*h.keys.map(&:to_sym)).new(*h.values)    
+    Struct.new(*h.keys.map(&:to_sym)).new(*h.values).freeze    
   end
 
   private
