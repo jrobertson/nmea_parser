@@ -68,6 +68,8 @@ class NMEAParser
         @track, @mag_track, @speed, @speed_kph = a.values_at(1,3,5,7)
   
     end
+    
+    self
 
   end
 
